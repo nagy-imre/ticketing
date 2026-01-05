@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ticket Manager – Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>🏢 Ticket Manager</h1>
+  <div id="userBar"></div>
+</header>
+
+<main>
+
+  <!-- LOGIN -->
+  <section id="loginCard" class="card">
+    <h2>Login</h2>
+    <input id="loginUser" placeholder="Username">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p class="error" id="loginError"></p>
+  </section>
+
+  <!-- APP -->
+  <section id="app" hidden>
+
+    <section class="card">
+      <h2>Create Ticket</h2>
+
+      <input id="title" placeholder="Title">
+
+      <select id="type">
+        <option>Plumbing issue</option>
+        <option>Electrical issue</option>
+        <option>HVAC / Air conditioning</option>
+        <option>Furniture damage</option>
+        <option>Cleaning request</option>
+        <option>Trash / waste issue</option>
+        <option>Restroom cleaning</option>
+        <option>Other</option>
+      </select>
+
+      <select id="priority">
+        <option>LOW</option>
+        <option selected>MEDIUM</option>
+        <option>HIGH</option>
+        <option>URGENT</option>
+      </select>
+
+      <select id="floor"></select>
+
+      <textarea id="description" placeholder="Describe the issue"></textarea>
+
+      <button onclick="createTicket()">Create</button>
+    </section>
+
+    <section class="card">
+      <h2>Tickets</h2>
+      <div id="tickets"></div>
+    </section>
+
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
